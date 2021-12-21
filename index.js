@@ -5,13 +5,19 @@ for (var i =0; i<numberButton;i++){
 
 }
 
+document.addEventListener("keydown", keypress);
+
+function keypress(event){
+    var key=event.key;
+    playSound(key);
+}
 
 
-function click(){
+function playSound(key){
 
-    var buttonText=this.innerHTML;
+    // var key=this.innerHTML;
     // console.log(buttonText)
-    switch (buttonText){
+    switch (key){
         case "w":
             var tom1= new Audio("./sounds/tom-1.mp3");
             tom1.play();
@@ -21,7 +27,7 @@ function click(){
             crash.play();
             break;
         case "s":
-            var kick= new Audio("./sounds/kick.mp3");
+            var kick= new Audio("./sounds/kick-bass.mp3");
             kick.play();
             break;
 
@@ -44,7 +50,8 @@ function click(){
 
         default: console.log(buttonText)
     }
-    var audio= new Audio("./sounds/tom-1.mp3");
-    audio.play();
-    this.style.color="white";
+    // var audio= new Audio("./sounds/tom-1.mp3");
+    // audio.play();
+    // this.style.color="white";
 }
+
