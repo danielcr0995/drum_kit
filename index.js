@@ -27,7 +27,7 @@ function click(){
 
         case "d":
             var tom2= new Audio("./sounds/tom-2.mp3");
-            tom1.play();
+            tom2.play();
             break;
         case "j":
             var tom3= new Audio("./sounds/tom-3.mp3");
