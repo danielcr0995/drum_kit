@@ -12,6 +12,10 @@ function keypress(event){
     playSound(key);
 }
 
+function click(){
+    var key=this.innerHTML;
+    playSound(key);
+}
 
 function playSound(key){
 
