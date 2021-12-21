@@ -5,16 +5,19 @@ for (var i =0; i<numberButton;i++){
 
 }
 
-document.addEventListener("keydown", keypress);
+document.addEventListener("keydown", keydown);
 
-function keypress(event){
+function keydown(event){
     var key=event.key;
+    // console.log(key);
     playSound(key);
+    buttonAnimation(event.key);
 }
 
 function click(){
     var key=this.innerHTML;
     playSound(key);
+    buttonAnimation(key);
 }
 
 function playSound(key){
@@ -59,3 +62,12 @@ function playSound(key){
     // this.style.color="white";
 }
 
+function buttonAnimation(currentKey){
+    // console.log(currentKey);
+    var activeButton=document.querySelector("."+ currentKey);
+    activeButton.classList.add("pressed");
+
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    },150)
+}
